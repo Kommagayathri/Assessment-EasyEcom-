@@ -1,0 +1,44 @@
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin-left: 250px; /* Account for fixed sidebar */
+  min-height: 100vh;
+}
+
+/* Global styles that would typically go in styles.css or global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Success message styles that can be used across components */
+.success-message {
+  padding: 10px 15px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Page title styles */
+.page-title {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: bold;
+}

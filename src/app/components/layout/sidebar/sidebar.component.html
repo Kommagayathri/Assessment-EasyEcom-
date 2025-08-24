@@ -1,0 +1,47 @@
+<!-- <nav class="sidebar">
+  <div class="sidebar-header">
+    <h2 class="sidebar-title">Company Manager</h2>
+  </div>
+  
+  <div class="sidebar-menu">
+    <a
+      *ngFor="let item of menuItems"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      <span class="menu-icon">{{ item.icon }}</span>
+      <span class="menu-label">{{ item.label }}</span>
+    </a>
+  </div>
+</nav> -->
+<!-- <div class="side-navigation">
+  <h2 class="nav-title">Company CRUD</h2>
+  <nav>
+    <div
+      (click)="setActiveMenu('companyList')"
+      [ngClass]="activeMenu === 'companyList' ? 'nav-item-active' : 'nav-item'">
+      Company List
+    </div>
+    <div
+      (click)="handleNewCompany()"
+      [ngClass]="activeMenu === 'newCompany' ? 'nav-item-active' : 'nav-item'">
+      New Company
+    </div>
+  </nav>
+</div> -->
+
+<nav class="side-navigation">
+  <h2 class="nav-title">Company CRUD</h2>
+  <div class="nav-menu">
+    <div
+      *ngFor="let item of menuItems"
+      [routerLink]="item.path"
+      routerLinkActive="nav-item-active"
+      class="nav-item"
+      [routerLinkActiveOptions]="{exact: false}"
+    >
+      {{ item.label }}
+    </div>
+  </div>
+</nav>

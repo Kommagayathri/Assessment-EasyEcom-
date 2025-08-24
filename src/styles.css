@@ -1,1 +1,264 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --border-radius: 6px;
+  --border-radius-lg: 8px;
+  --transition: all 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px; /* Increased from 14px */
+  line-height: 1.6; /* Improved line height */
+  color: var(--gray-700);
+  background-color: var(--gray-50);
+}
+
+/* Utility Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* Increased padding */
+  font-size: 16px; /* Increased from 14px */
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  gap: 8px; /* Increased gap */
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--gray-50);
+  border-color: var(--gray-400);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+  border-color: var(--danger-color);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.btn-sm {
+  padding: 8px 16px; /* Increased from 6px 12px */
+  font-size: 14px; /* Increased from 12px */
+}
+
+.card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.form-group {
+  margin-bottom: 24px; /* Increased spacing */
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px; /* Increased margin */
+  font-weight: 500;
+  font-size: 16px; /* Added explicit font size */
+  color: var(--gray-700);
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: var(--danger-color);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px; /* Increased padding */
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: 16px; /* Increased from 14px */
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+}
+
+.form-input.error {
+  border-color: var(--danger-color);
+}
+
+.form-error {
+  color: var(--danger-color);
+  font-size: 14px; /* Increased from 12px */
+  margin-top: 6px; /* Increased margin */
+}
+
+.success-message {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 16px; /* Increased padding */
+  border-radius: var(--border-radius);
+  border: 1px solid #bbf7d0;
+  margin-bottom: 24px; /* Increased margin */
+  font-size: 16px; /* Added explicit font size */
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--border-radius-lg);
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px; /* Increased table font size */
+}
+
+.table th {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  font-weight: 600;
+  font-size: 16px; /* Explicit header font size */
+  padding: 16px 20px; /* Increased padding */
+  text-align: left;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.table td {
+  padding: 16px 20px; /* Increased padding */
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 16px; /* Explicit cell font size */
+}
+
+.table tr:hover {
+  background-color: var(--gray-50);
+}
+
+/* Navigation Styles */
+.sidebar {
+  background-color: var(--gray-800);
+  color: white;
+  padding: 24px; /* Increased padding */
+  width: 250px; /* Slightly wider */
+  min-height: 100vh;
+}
+
+.sidebar h1 {
+  font-size: 24px; /* Increased title font size */
+  font-weight: 700;
+  margin-bottom: 32px; /* Increased margin */
+  color: white;
+}
+
+.nav-item {
+  display: block;
+  color: var(--gray-300);
+  text-decoration: none;
+  padding: 12px 16px; /* Increased padding */
+  margin-bottom: 8px; /* Increased margin */
+  border-radius: var(--border-radius);
+  font-size: 16px; /* Added explicit font size */
+  transition: var(--transition);
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding: 32px; /* Increased padding */
+}
+
+.page-header {
+  margin-bottom: 32px; /* Increased margin */
+}
+
+.page-title {
+  font-size: 32px; /* Increased from smaller size */
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 18px; /* Added subtitle styling */
+  color: var(--gray-600);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  padding: 32px; /* Increased padding */
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px; /* Increased gap */
+  margin-bottom: 24px; /* Increased margin */
+}

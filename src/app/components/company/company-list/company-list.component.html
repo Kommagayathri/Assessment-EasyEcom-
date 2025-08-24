@@ -1,0 +1,64 @@
+<div class="page-header">
+  <h1 class="page-title">Company List</h1>
+  <a routerLink="/companies/new" class="btn btn-primary">
+    <span>➕</span>
+    Add New Company
+  </a>
+</div>
+
+<div class="card">
+  <div class="table-container" *ngIf="companies.length > 0; else noData">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td class="company-name">{{ company.companyName }}</td>
+          <td>{{ company.email }}</td>
+          <td>{{ company.phoneNumber }}</td>
+          <td>{{ formatDate(company.createdAt) }}</td>
+          <td class="actions">
+            <a
+              [routerLink]="['/companies/edit', company.id]"
+              class="btn btn-secondary btn-sm"
+            >
+              ✏️ Edit
+            </a>
+            <button
+              (click)="confirmDelete(company.id!)"
+              class="btn btn-danger btn-sm"
+            >
+              🗑️ Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noData>
+    <div class="no-data">
+      <div class="no-data-icon">📋</div>
+      <h3>No Companies Found</h3>
+      <p>Get started by adding your first company.</p>
+      <a routerLink="/companies/new" class="btn btn-primary">
+        Add New Company
+      </a>
+    </div>
+  </ng-template>
+</div>
+
+<app-confirmation-dialog
+  [show]="showDeleteDialog"
+  title="Delete Company"
+  message="Are you sure you want to delete this company? This action cannot be undone."
+  (confirm)="onDeleteConfirm()"
+  (cancel)="onDeleteCancel()"
+></app-confirmation-dialog>

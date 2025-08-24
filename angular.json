@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/crud-app",
+            "outputPath": "dist/assessment_project",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -92,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8dc78845-2ade-4141-b27d-774d9c291792"
   }
 }
